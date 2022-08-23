@@ -13,7 +13,6 @@ export const LoginPage = () => {
     const onLogin = ({username, password}) => {
         axios.post('http://localhost:3003/login', { username, password })
         .then(res => {
-            console.log(res)
             saveLoggedInUser(res.data.key, res.data.user)
             updateUser()
             navigate('/')

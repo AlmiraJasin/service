@@ -11,7 +11,7 @@ export const ShopCreationForm = ({onCreateShop}) => {
     return (
         <div className="shop-creation-form">
             <TextField label="Enter Shop Name" name="shopName" value={shopName} onChange={e => setShopName(e.target.value)}/>
-            <TextField label="Enter shop address" name="shopAddress" value={shopAddress} onChange={e => setShopAddress(e.target.value)}/>
+            <TextField label="Enter Shop address" name="shopAddress" value={shopAddress} onChange={e => setShopAddress(e.target.value)}/>
             <Button variant="secondary" onClick={() => onCreateShop({shopName, shopAddress})}>Register Shop</Button>
         </div>
     );

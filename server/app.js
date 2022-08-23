@@ -22,6 +22,7 @@ const con = mysql.createConnection({
     database: "service",
 });
 
+
 app.post("/register", (req, res) => {
     if (req.body.password !== req.body.passwordRepeat) {
         res.status(400).send({msg: 'Passwords do not match'})
@@ -77,7 +78,18 @@ app.post("/login", (req, res) => {
     });
 });
 
-
+//create shop
+app.post("/admin/shops", (req, res) => {
+    const sql = `
+    INSERT INTO shops
+    (shop_name, address)
+    VALUES (?, ?)
+    `;
+    con.query(sql, [req.body.shopName, req.body.shopAddress], (err, result) => {
+        if (err) throw err;
+        res.send({ result, msg: { text: 'New shop has been added', type: 'success' } });
+    });
+});
 
 
 
