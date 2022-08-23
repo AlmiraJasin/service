@@ -78,7 +78,7 @@ app.post("/login", (req, res) => {
     });
 });
 
-//create shop
+// shop
 app.post("/admin/shops", (req, res) => {
     const sql = `
     INSERT INTO shops
@@ -91,7 +91,40 @@ app.post("/admin/shops", (req, res) => {
     });
 });
 
+app.get("/admin/shops", (req, res) => {
+    const sql = `
+  SELECT *
+  FROM shops
+  ORDER BY shop_name
+`;
+    con.query(sql, (err, result) => {
+        if (err) throw err;
+        res.send(result);
+    });
+});
 
+/* app.delete("/admin/shops/:id", (req, res) => {
+    const sql = `
+    DELETE FROM cats
+    WHERE id = ?
+    `;
+    con.query(sql, [req.params.id], (err, result) => {
+        if (err) throw err;
+        res.send({ result, msg: { text: 'OK, Cat gone', type: 'success' } });
+    });
+});
+
+app.put("/admin/shops/:id", (req, res) => {
+    const sql = `
+    UPDATE cats
+    SET title = ?
+    WHERE id = ?
+    `;
+    con.query(sql, [req.body.title, req.params.id], (err, result) => {
+        if (err) throw err;
+        res.send({ result, msg: { text: 'OK, Cat updated. Now it is as new', type: 'success' } });
+    });
+}); */
 
 
 
