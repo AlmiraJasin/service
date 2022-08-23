@@ -1,1 +1,13 @@
-style
+.table {
+    display: flex;
+    flex-direction: column;
+    color: white;
+  
+    & > .headers {
+      display: flex;
+    }
+  
+    & > .listItem {
+      display: flex;
+    }
+  }
