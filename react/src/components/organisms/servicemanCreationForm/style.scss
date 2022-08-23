@@ -19,4 +19,15 @@
             opacity: 0.9;
         }
     }
+
+    & > .label {
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    & > select {
+        padding: 5px 40px;
+        margin: 10px 0;
+    }
 }

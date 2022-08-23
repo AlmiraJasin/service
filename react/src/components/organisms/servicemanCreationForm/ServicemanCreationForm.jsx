@@ -22,14 +22,13 @@ export const ServicemanCreationForm = ({onCreateServiceman}) => {
             <TextField label="Enter Serviceman name" name="servicemanName" value={servicemanName} onChange={e => setServicemanName(e.target.value)}/>
             <TextField label="Enter Serviceman surname" name="servicemanSurname" value={servicemanSurname} onChange={e => setServicemanSurname(e.target.value)}/>
             <TextField label="Enter Serviceman specialty" name="setServicemanSpecialty" value={setServicemanSpecialty} onChange={e => setSetServicemanSpecialty(e.target.value)}/>
-            <label>Choose Shop</label>
-                    <select onChange={e => setShops(e.target.value)} value={shops}>
+            <label className="label">Choose Shop</label>
+                <select onChange={e => setShops(e.target.value)} value={shops}>
                         <option value="0">Choose shop</option>
                         {
                             shops ? shops.map(shop => <option key={shop.id} value={shop.id}>{shop.id}</option>) : null
                         }
-                    </select>
-                    <small className="form-text text-muted">Select category here.</small>
+                </select>
             <Button variant="secondary" onClick={() => onCreateServiceman({servicemanName, servicemanSurname, setServicemanSpecialty})}>Register Serviceman</Button>
         </div>
     );
