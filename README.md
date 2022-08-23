@@ -14,4 +14,4 @@ This page has user and admin interfaces, where user can only interact with home 
 
 ## Starting Service project 
 
-Please download repo, write "npm i" in your terminal to install all packages needed for server and react app, write "npm start" in separate terminals for server and react app. In order for it to fully function "MariaDB" tables are needed.  
+Please download repo, write "npm i" in your terminal to install all packages needed for server and react app, write "npm start" in separate terminals for server and react app. In order for it to fully function "MariaDB" tables are needed. Here is a separate data-structuring.txt file where you can find how tables should look like and exported table structure with example inputs that you can import into your system.
