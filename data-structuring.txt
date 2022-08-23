@@ -1,0 +1,30 @@
+maria db tables:
+
+1. users
+
+id
+username
+password
+is_admin
+session
+
+2. servicemen
+
+id
+name
+surname
+specialty
+image
+shop
+address
+likes
+
+3. shops
+
+id
+
+
+
+
+
+
