@@ -2,7 +2,7 @@ import "./style.scss"
 
 export const ShopAdminPage = () => {
     return (
-        <div className="registration-success">
+        <div className="shop-admin">
             
         </div>
     )

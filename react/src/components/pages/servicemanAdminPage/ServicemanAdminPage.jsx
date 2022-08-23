@@ -2,8 +2,8 @@ import "./style.scss"
 
 export const ServicemanAdminPage = () => {
     return (
-        <div className="registration-success">
-            
+        <div className="serviceman-admin">
+
         </div>
     )
 }

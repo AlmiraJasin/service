@@ -21,10 +21,10 @@ export const SideBar = () => {
                 <div className="logo">
                     <img src={logo} alt="logo" />
                 </div>
-                <NavLink to="/admin/" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>Admin</NavLink>
-                <NavLink to="/link/" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>Link</NavLink>
-                <NavLink to="/link1/" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>Link</NavLink>
-                <NavLink to="/link2/" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>Link</NavLink>
+                <NavLink to="" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>Home</NavLink>
+                <NavLink to="/serviceman-admin-page" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>New Serviceman</NavLink>
+                <NavLink to="/shop-admin-page" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>New Shop</NavLink>
+                <NavLink to="/shop-and-servicemen-list-admin-page" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>Servicemen and Shops</NavLink>
             </div>
             <div className="bottom-section">
                 {isLoggedIn ?
