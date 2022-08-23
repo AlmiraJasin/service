@@ -110,21 +110,21 @@ app.delete("/admin/shops/:id", (req, res) => {
     `;
     con.query(sql, [req.params.id], (err, result) => {
         if (err) throw err;
-        res.send({ result, msg: { text: 'OK, Cat gone', type: 'success' } });
+        res.send({ result, msg: { text: 'Selected shop has been deleted', type: 'success' } });
     });
 });
 
-/* app.put("/admin/shops/:id", (req, res) => {
+app.put("/admin/shops/:id", (req, res) => {
     const sql = `
     UPDATE shops
-    SET title = ?
+    SET shopName = ?, shopAddress = ?
     WHERE id = ?
     `;
-    con.query(sql, [req.body.title, req.params.id], (err, result) => {
+    con.query(sql, [req.body.shopName, req.body.shopAddress], (err, result) => {
         if (err) throw err;
-        res.send({ result, msg: { text: 'OK, Cat updated. Now it is as new', type: 'success' } });
+        res.send({ result, msg: { text: 'Selected shop has been edited', type: 'success' } });
     });
-}); */
+});
 
 //servicemen 
 
@@ -137,6 +137,18 @@ app.post("/admin/servicemen", (req, res) => {
     con.query(sql, [req.body.servicemanName, req.body.servicemanSurname, req.body.setServicemanSpecialty, req.body.shop], (err, result) => {
         if (err) throw err;
         res.send({ result, msg: { text: 'New serviceman has been added', type: 'success' } });
+    });
+});
+
+app.get("/admin/servicemen", (req, res) => {
+    const sql = `
+  SELECT *
+  FROM servicemen
+  ORDER BY name
+`;
+    con.query(sql, (err, result) => {
+        if (err) throw err;
+        res.send(result);
     });
 });
 
