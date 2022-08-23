@@ -11,6 +11,7 @@ export const ServicemanCreationForm = ({onCreateServiceman}) => {
     const [servicemanName, setServicemanName] = useState('');
     const [servicemanSurname, setServicemanSurname] = useState('');
     const [setServicemanSpecialty, setSetServicemanSpecialty] = useState('');
+    const [shop, setShop] = useState('');
 
     useEffect(() => {
         axios.get('http://localhost:3003/admin/shops')
@@ -23,13 +24,13 @@ export const ServicemanCreationForm = ({onCreateServiceman}) => {
             <TextField label="Enter Serviceman surname" name="servicemanSurname" value={servicemanSurname} onChange={e => setServicemanSurname(e.target.value)}/>
             <TextField label="Enter Serviceman specialty" name="setServicemanSpecialty" value={setServicemanSpecialty} onChange={e => setSetServicemanSpecialty(e.target.value)}/>
             <label className="label">Choose Shop</label>
-                <select onChange={e => setShops(e.target.value)} value={shops}>
+                <select onChange={e => setShop(e.target.value)} value={shop}>
                         <option value="0">Choose shop</option>
                         {
                             shops ? shops.map(shop => <option key={shop.id} value={shop.id}>{shop.shop_name}</option>) : null
                         }
                 </select>
-            <Button variant="secondary" onClick={() => onCreateServiceman({servicemanName, servicemanSurname, setServicemanSpecialty})}>Register Serviceman</Button>
+            <Button variant="secondary" onClick={() => onCreateServiceman({servicemanName, servicemanSurname, setServicemanSpecialty, shop})}>Register Serviceman</Button>
         </div>
     );
 }

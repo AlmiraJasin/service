@@ -126,6 +126,19 @@ app.put("/admin/shops/:id", (req, res) => {
     });
 }); */
 
+//servicemen 
+
+app.post("/admin/servicemen", (req, res) => {
+    const sql = `
+    INSERT INTO servicemen
+    (name, surname, specialty, shop_id)
+    VALUES (?, ?, ?, ?)
+    `;
+    con.query(sql, [req.body.servicemanName, req.body.servicemanSurname, req.body.setServicemanSpecialty, req.body.shop], (err, result) => {
+        if (err) throw err;
+        res.send({ result, msg: { text: 'New serviceman has been added', type: 'success' } });
+    });
+});
 
 
 
