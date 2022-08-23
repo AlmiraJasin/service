@@ -103,9 +103,9 @@ app.get("/admin/shops", (req, res) => {
     });
 });
 
-/* app.delete("/admin/shops/:id", (req, res) => {
+app.delete("/admin/shops/:id", (req, res) => {
     const sql = `
-    DELETE FROM cats
+    DELETE FROM shops
     WHERE id = ?
     `;
     con.query(sql, [req.params.id], (err, result) => {
@@ -114,9 +114,9 @@ app.get("/admin/shops", (req, res) => {
     });
 });
 
-app.put("/admin/shops/:id", (req, res) => {
+/* app.put("/admin/shops/:id", (req, res) => {
     const sql = `
-    UPDATE cats
+    UPDATE shops
     SET title = ?
     WHERE id = ?
     `;
