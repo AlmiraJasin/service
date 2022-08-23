@@ -5,6 +5,7 @@ export const ShopAdminPage = () => {
     return (
         <div className="shop-admin">
             <ShopCreationForm />
+            
         </div>
     )
 }
