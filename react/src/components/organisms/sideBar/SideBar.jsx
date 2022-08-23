@@ -18,14 +18,14 @@ export const SideBar = () => {
     }
 
     return (
-      <>
-          <div className="topbar">
-              <button className="burgerButton" onClick={() => setIsOpen(true)}>
+        <>
+        <div className="topbar">
+            <button className="burgerButton" onClick={() => setIsOpen(true)}>
                   <span className="line"/>
                   <span className="line"/>
                   <span className="line"/>
-              </button>
-          </div>
+            </button>
+        </div>
         <div className={`sidebar ${isOpen ? 'open' : ''}`}>
             <div className="top-section">
                 <div className="logo">
@@ -41,6 +41,7 @@ export const SideBar = () => {
                     </> : 
                     <NavLink to="" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>Home</NavLink>
                 }
+            </div>
             <div className="bottom-section">
                 {isLoggedIn ?
                         <button onClick={() => logoutUser()} className="logout">Logout</button> :
@@ -49,10 +50,9 @@ export const SideBar = () => {
                         <Link to="/register" className="link">Register</Link>
                     </>
                 }
-
             </div>
         </div>
-      </>
+        </>
     )
 }
 
