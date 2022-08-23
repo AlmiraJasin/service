@@ -26,7 +26,7 @@ export const ServicemanCreationForm = ({onCreateServiceman}) => {
                 <select onChange={e => setShops(e.target.value)} value={shops}>
                         <option value="0">Choose shop</option>
                         {
-                            shops ? shops.map(shop => <option key={shop.id} value={shop.id}>{shop.id}</option>) : null
+                            shops ? shops.map(shop => <option key={shop.id} value={shop.id}>{shop.shop_name}</option>) : null
                         }
                 </select>
             <Button variant="secondary" onClick={() => onCreateServiceman({servicemanName, servicemanSurname, setServicemanSpecialty})}>Register Serviceman</Button>
