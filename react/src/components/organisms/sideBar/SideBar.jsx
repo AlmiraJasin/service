@@ -8,7 +8,8 @@ import { logout } from '../../../functions/auth'
 export const SideBar = () => {
     const [isOpen, setIsOpen] = useState(false)
     const navigate = useNavigate();
-    const { isLoggedIn, updateUser } = useContext(authContext)
+    const { isLoggedIn, updateUser, isAdmin } = useContext(authContext)
+
 
     const logoutUser = () => {
         logout()
@@ -31,10 +32,15 @@ export const SideBar = () => {
                     <img src={logo} alt="logo" />
                     <button className="close" onClick={() => setIsOpen(false)}/>
                 </div>
-                <NavLink to="" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>Home</NavLink>
-                <NavLink to="/serviceman-admin-page" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>New Serviceman</NavLink>
-                <NavLink to="/shop-admin-page" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>New Shop</NavLink>
-                <NavLink to="/shop-and-servicemen-list-admin-page" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>Servicemen and Shops</NavLink></div>
+                { isAdmin ?
+                    <>
+                        <NavLink to="" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>Home</NavLink>
+                        <NavLink to="/serviceman-admin-page" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>New Serviceman</NavLink>
+                        <NavLink to="/shop-admin-page" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>New Shop</NavLink>
+                        <NavLink to="/shop-and-servicemen-list-admin-page" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>Servicemen and Shops</NavLink>
+                    </> : 
+                    <NavLink to="" className="nav-link" style={({ isActive }) => isActive ? {color: 'white'} : null}>Home</NavLink>
+                }
             <div className="bottom-section">
                 {isLoggedIn ?
                         <button onClick={() => logoutUser()} className="logout">Logout</button> :
@@ -49,3 +55,4 @@ export const SideBar = () => {
       </>
     )
 }
+
