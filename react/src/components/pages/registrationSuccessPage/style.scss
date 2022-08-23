@@ -1,0 +1,21 @@
+.registration-success {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 auto;
+    background-image: url(../../../assets/registration-success-bg.jpg);
+    background-position: center;
+    background-size: cover;
+
+    & > .text {
+        color: white;
+        & > .link {
+        color: blue;
+        }
+    }
+
+    
+}
+
+

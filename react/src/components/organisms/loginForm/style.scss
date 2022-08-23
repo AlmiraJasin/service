@@ -1,0 +1,22 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > .textField {
+        width: 100%;
+
+        & > label {
+            color: white;
+        }
+
+        & > input {
+            opacity: 0.75;
+        }
+
+        & > input:focus {
+            opacity: 0.9;
+        }
+    }
+}

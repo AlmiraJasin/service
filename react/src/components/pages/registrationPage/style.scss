@@ -1,0 +1,20 @@
+.registration-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 auto;
+    background-image: url(../../../assets/registration-bg.jpg);
+    background-position: center;
+    background-size: cover;
+
+    & > .error-container {
+        padding: 10px 20px;
+        box-shadow: rgba(237, 8, 8, 0.3) 0 1px 3px 0, rgb(60 64 67 / 15%) 0 4px 8px 3px;
+        border-radius: 15px;
+        border-style: none;
+        margin: 10px 0;
+        color: white;
+        background-color: rgba(237, 8, 8, 0.5);
+    }
+}
