@@ -19,7 +19,7 @@ const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "gofundme",
+    database: "service",
 });
 
 app.post("/register", (req, res) => {

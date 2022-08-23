@@ -15,7 +15,6 @@ name
 surname
 specialty
 image
-address
 likes
 shop_id
 
@@ -23,6 +22,7 @@ shop_id
 
 id
 shop_name
+address
 
 
 
