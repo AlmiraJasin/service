@@ -18,10 +18,14 @@ image
 shop
 address
 likes
+shop_id
 
 3. shops
 
 id
+shop_name
+
+
 
 
 
